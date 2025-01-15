@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
 }
 
 .login-container {
@@ -8,6 +10,8 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 .form-section {
@@ -18,8 +22,9 @@ body {
     flex-direction: column;
     justify-content: center;
     flex: 1;
-    max-width: 50%;
+    max-width: 100%;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .right-side {
@@ -30,15 +35,16 @@ body {
     justify-content: center;
     flex-direction: column;
     flex: 1;
-    max-width: 50%;
+    max-width: 100%;
     padding: 20px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .right-side img {
-    /* width: 100%; */
-    max-width: 400px;
-    height: 78%;
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
     width: 70%;
 }
 
@@ -81,14 +87,76 @@ body {
     margin-top: 20px;
 }
 
-/* Adjust for larger screens */
+/* Media Queries for Responsive Design */
+
+/* Mobile devices */
+@media (max-width: 575px) {
+    .login-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .form-section, .right-side {
+        max-width: 100%;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .right-side img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .footer-text {
+        font-size: 14px;
+    }
+
+    .form-section {
+        padding: 30px;
+    }
+}
+
+/* Tablets and small devices */
+@media (min-width: 576px) and (max-width: 767px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .form-section, .right-side {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .right-side img {
+        max-width: 90%;
+        height: auto;
+    }
+}
+
+/* Desktop devices */
 @media (min-width: 768px) {
     .form-section {
         width: 50%;
         padding-right: 20px;
     }
+
     .right-side {
         width: 50%;
         padding-left: 20px;
+    }
+
+    .footer-text {
+        font-size: 16px;
+    }
+}
+
+/* Large desktop screens */
+@media (min-width: 1200px) {
+    .form-section {
+        width: 45%;
+    }
+
+    .right-side {
+        width: 55%;
     }
 }
